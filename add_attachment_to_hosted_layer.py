@@ -10,9 +10,9 @@ keinan@keinanmarks.com
 import arcgis
 from arcgis.gis import GIS
 
-#getpass for discrete password entry
+#getpass for discreet password entry
 import getpass
-#use os for getting image files
+#use os for getting file list of attachments
 import os
 #use regex for numeric matching
 import re
@@ -38,8 +38,8 @@ facilities_fl = facilities.layers[cf.layer_index]
 fl_df = facilities_fl.query(where = '1=1', as_df = True)
 
 
-#Build Dictionary of Facility IDs and their Feature OIDs
-#Facility ID : OID
+#Build Dictionary of match strings and their Feature OIDs
+#regex match string : OID
 dict_oid = {}
 for index, row in fl_df.iterrows():
     try:
@@ -54,7 +54,7 @@ for index, row in fl_df.iterrows():
 #Match the ID from the photos to the ID in the Features
 
 #dictionary to store OID and file paths
-#OID : [Image Path1, Image Path 2,... Image path n]
+#OID : [File Path1, File Path 2,... File path n]
 oid_dict = {}
 
 
@@ -73,14 +73,14 @@ for file in files:
             oid_dict[id_key].append(val)
         except:
             oid_dict[id_key] = [val]
-    #print if image ID not in the feature layer
+    #print if File ID not in the feature layer
     except:
         print('no match in feature layer', file)
     
 #Create an Attachment manager
 am = arcgis.features.managers.AttachmentManager(facilities_fl)
 
-#checks if the image already exists on a feature
+#checks if the attachment already exists on a feature
 #if update_images bool is true, replaces the image with new file
 #if filename doesn't already exist, adds file to feature
 
