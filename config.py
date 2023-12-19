@@ -11,8 +11,8 @@ keinan@keinanmarks.com
 #Log in to Portal
 portal = 'https://www.arcgis.com'
 
-#username = 'USERNAME'
-#password = 'P@SSW0RD'
+username = 'USERNAME'
+password = 'P@SSW0RD'
 manual_password_entry = True
 
 #Id of feature service
