@@ -16,12 +16,12 @@ portal = 'https://www.arcgis.com'
 manual_password_entry = True
 
 #Id of feature service
-service_id = #eg '7d1b813995a94990b592f8df242716ee'
+service_id = '' #eg'7d1b813995a94990b592f8df242716ee'
 #index of layer at service
 layer_index = 0
 
 #path to images
-path = '\\PATH\TO\FILES\'
+path = r'\\PATH\\TO\\FILES\\'
 
 
 #Define field in feature layer with the facility ID numeric
