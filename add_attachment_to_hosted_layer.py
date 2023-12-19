@@ -75,7 +75,7 @@ for file in files:
             oid_dict[id_key] = [val]
     #print if image ID not in the feature layer
     except:
-        print('no facility in feature layer', file)
+        print('no match in feature layer', file)
     
 #Create an Attachment manager
 am = arcgis.features.managers.AttachmentManager(facilities_fl)
