@@ -44,10 +44,11 @@ Change the run.bat file to point to your ArcGIS Pro python environment
    ```
 5. Set the regex matching string\index to return
    ```
+   #Default will match the first numeric grouping in a string
    regex_string = r'\d+'
    regex_index = 0
    ```
-   Default will match the first numeric grouping in a string
+   
    
 6. Set whether you want to update existing files or ignore (pass) files with the same filename
    ```
